@@ -1,42 +1,26 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
+Social network application, written with <a href="typescriptlang.org" target="blank">Typescript</a>. It is a complete CRUD server application, both users and posts.
+It is built on the <a href="https://nestjs.com" target="blank">Nestjs</a> framework, taking full advantage of it. User authentication is built with Passport. The database is <a href="https://postgresql.org" target="blank">Postgresql</a> with <a href="https://typeorm.io" target="blank">TypeORM</a> as ORM and the use of <a href="https://www.rabbitmq.com/" target="blank">RabbitMQ</a> for email sending.
 ## Installation
 
-```bash
+```bash nestjapp
 $ npm install
 ```
 
-## Running the app
+```bash mailerapp
+$ npm install
+```
+
+```Run Docker-compose for DB & RabbitMQ
+$ docker-compose up -d
+```
+
+## Running the app's
 
 ```bash
 # development
-$ npm run start
+$ npm run start mailerapp 
 
 # watch mode
 $ npm run start:dev
@@ -45,29 +29,14 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Description
 
-```bash
-# unit tests
-$ npm run test
+1. The application has its respective documentation in the nestjsapp project. When running the project by default it does it through port 5000, however it can be modified, by accessing the path /docs#/ (http://localhost:5000/docs#/) you will find the documentation. 
 
-# e2e tests
-$ npm run test:e2e
+![image](https://github.com/TOYCRESJDGM/SocialNetwork/assets/69774985/d01e277a-ce24-4612-97ba-15ca9fb8f097)
 
-# test coverage
-$ npm run test:cov
-```
+2. As for the sending of e-mails, this is done at the time of successful registration through the mailerapp service, for which MailJet and RabbitMQ were used as brokers for communication between the services.
 
-## Support
+![image](https://github.com/TOYCRESJDGM/SocialNetwork/assets/69774985/5c4fcd54-5fea-4e8a-be3b-954bf27582f7)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
