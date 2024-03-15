@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+    postgresdb:
+      image: postgres:16.2
+      container_name: postgresdb
+      restart: always
+      env_file: ./.env
+      environment:
+        POSTGRES_USER: $DB_USER
+        POSTGRES_PASSWORD: $DB_PW
+        POSTGRES_DB: $DB_DB
+      ports:
+        - $DB_PORT:$DB_PORT
+      volumes:
+        - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+    nestjs-rabbitmq:
+      container_name: nestjs-rabbitmq
+      image: rabbitmq:3-management
+      ports:
+        - '5672:5672'
+        - '15672:15672'
+
+volumes:
+  postgres_data:
+
